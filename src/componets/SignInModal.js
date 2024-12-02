@@ -14,7 +14,8 @@ const SignInModal = ({
 }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 mt-6">
-      <div className="relative w-full max-w-[576px] rounded-lg bg-white p-6 shadow-lg">
+      <div className="relative w-full max-w-[576px] rounded-lg bg-white p-6 shadow-lg 
+        animate-slide-in-top transform transition-all duration-300 ease-out">
         <button
           className="absolute right-4 text-black"
           type="button"

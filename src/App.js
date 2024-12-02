@@ -5,11 +5,8 @@ import Home from './componets/Home';
 import './App.css';
 import Library from './componets/Library';
 import Feed from './componets/Feed';
-import Floats from './Floats';
 import List from './componets/List';
 import VideoDetails from './componets/VideoPlayer';
-
-
 
 function App() {
   return (
@@ -25,7 +22,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
-    <Floats/>
+    {/* <Floats/> */}
     </>
   );
 }

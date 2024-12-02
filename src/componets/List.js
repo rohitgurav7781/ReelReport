@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchVideos } from './videoApi';
+import { fetchVideos } from '../API/videoApi';
 
 const List = () => {
   const [videos, setVideos] = useState([]);
@@ -44,7 +44,7 @@ const List = () => {
   }
 
   return (
-    <div className="p-3">
+    <div className="p-3 mx-3">
       <div className="p-4 text-2xl font-semibold">Explore</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8 max-h-[100vh] overflow-auto ">
         {videos.map((video) => (
@@ -65,8 +65,8 @@ const List = () => {
               </div>
             </div>
             <div className="font-semibold mt-2">{video.title}</div>
-            <div className="flex items-center space-x-2 mt-3">
-              <img
+            <div className="flex items-center space-x-2 mt-2">
+              <img  
                 src="https://demo.reelreport.net/assets/logoIcon-CS-jNTMX.svg"
                 alt="logo"
                 className="h-8 w-8"
@@ -84,5 +84,4 @@ const List = () => {
     </div>
   );
 };
-
 export default List;

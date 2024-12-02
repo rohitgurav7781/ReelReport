@@ -125,7 +125,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-1 sm:gap-3">
+        <div className="z-50 flex items-center gap-1 sm:gap-3">
           <ul className="flex items-center">
             <li
               className="bg-gray-800 h-10 w-[100px] cursor-pointer rounded-full text-white flex items-center justify-evenly"
@@ -160,7 +160,7 @@ const Navbar = () => {
       </div>
 
       {showSignInModal && (
-        <SignInModal 
+         <SignInModal 
           email={email}
           password={password}
           emailError={emailError}
@@ -172,6 +172,7 @@ const Navbar = () => {
           handleForgetPass={handleForgetPass}
           handleAccount={handleAccount}
         />
+    
       )}
 
       {showForgetPass && (
