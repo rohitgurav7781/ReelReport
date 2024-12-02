@@ -66,7 +66,7 @@ const Map = () => {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-200px)]"> 
+    <div className="w-full h-[calc(100vh-150px)]"> 
       {error && (
         <div className="p-4 text-red-500">
           {error}
