@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
@@ -17,7 +16,7 @@ const Map = () => {
 
   useEffect(() => {
     getLocation();
-  },);
+  }, []);
 
   const getLocation = () => {
     if (navigator.geolocation) {
@@ -26,7 +25,6 @@ const Map = () => {
         showError,
         {
           enableHighAccuracy: true,
-          // timeout: 10000,
           maximumAge: 0
         }
       );
@@ -68,21 +66,23 @@ const Map = () => {
   };
 
   return (
-    <div className="h-screen">
+    <div className="w-full h-[calc(100vh-200px)]"> 
       {error && (
-        <div className="p-4 bg-red-100 text-red-700">
+        <div className="p-4 text-red-500">
           {error}
         </div>
       )}
+      
       {location && (
         <MapContainer 
           center={[location.latitude, location.longitude]} 
           zoom={5} 
-          className="h-full w-full"
+          scrollWheelZoom={false}
+          className="w-full h-full"
         >
           <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker position={[location.latitude, location.longitude]}>
             <Popup>
